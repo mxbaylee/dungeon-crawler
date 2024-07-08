@@ -1,0 +1,18 @@
+-D windowSize=800x600
+
+-D windowTitle=Game
+-D resourcesPath=res
+
+-lib hashlink
+-lib heaps
+
+--main Main
+
+-cp src
+
+-p res
+
+-lib hlsdl
+
+-hl app.hl
+
