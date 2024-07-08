@@ -12,7 +12,7 @@
 
 -p res
 
--lib hlsdl
+#-lib hlsdl
 
--hl app.hl
+-js out/app.js
 
