@@ -1,3 +1,10 @@
+## Dependencies
+
+```
+brew install hashlink
+```
+
+
 ## Building
 
 ```
