@@ -3,6 +3,7 @@
 // roguelike
 enum abstract DirtPathRL (Int) to Int {
   var Top = 153;
+  var Middle = 185;
   var Bottom = 182;
 }
 
