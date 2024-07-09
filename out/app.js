@@ -298,51 +298,15 @@ Main.prototype = $extend(hxd_App.prototype,{
 		var myscene = new h2d_Scene();
 		this.setScene(myscene);
 		myscene.set_scaleMode(h2d_ScaleMode.Stretch(320,240));
-		var rlTiles = Main_roguelikeTiles();
-		myscene.addChild(Main_toSprite(rlTiles[153]));
-		myscene.addChild(Main_toSprite(rlTiles[160],75));
-		myscene.addChild(Main_toSprite(rlTiles[182],0,150));
-		myscene.addChild(Main_toSprite(rlTiles[189],75,150));
+		var rlTiles = Util_roguelikeTiles();
+		myscene.addChild(Util_toSprite(rlTiles[153]));
+		myscene.addChild(Util_toSprite(rlTiles[182],0,150));
+		var tdTiles = Util_tinydungeonTiles();
+		myscene.addChild(Util_toSprite(tdTiles[84],75));
+		myscene.addChild(Util_toSprite(tdTiles[85],75,150));
 	}
 	,__class__: Main
 });
-function Main_roguelikeTiles() {
-	var tileImage = hxd_Res.get_loader().loadCache("roguelikeDungeon_transparent.png",hxd_res_Image).toTile();
-	var tw = 16;
-	var th = 16;
-	var margin = 1;
-	var _g = [];
-	var _g1 = 0;
-	var _g2 = (tileImage.height + margin) / (th + margin) | 0;
-	while(_g1 < _g2) {
-		var y = _g1++;
-		var _g3 = 0;
-		var _g4 = (tileImage.width + margin) / (tw + margin) | 0;
-		while(_g3 < _g4) {
-			var x = _g3++;
-			_g.push(tileImage.sub(x * (tw + margin),y * (th + margin),tw,th));
-		}
-	}
-	return _g;
-}
-function Main_toSprite(tile,x,y) {
-	if(y == null) {
-		y = 0;
-	}
-	if(x == null) {
-		x = 0;
-	}
-	var sprite = new h2d_Bitmap(tile);
-	sprite.posChanged = true;
-	sprite.x = x;
-	sprite.posChanged = true;
-	sprite.y = y;
-	sprite.posChanged = true;
-	sprite.scaleX = 4;
-	sprite.posChanged = true;
-	sprite.scaleY = 4;
-	return sprite;
-}
 Math.__name__ = "Math";
 var Reflect = function() { };
 $hxClasses["Reflect"] = Reflect;
@@ -569,6 +533,62 @@ Type.enumParameters = function(e) {
 		return [];
 	}
 };
+function Util_roguelikeTiles() {
+	var tileImage = hxd_Res.get_loader().loadCache("roguelikeDungeon_transparent.png",hxd_res_Image).toTile();
+	var tw = 16;
+	var th = 16;
+	var margin = 1;
+	var _g = [];
+	var _g1 = 0;
+	var _g2 = (tileImage.height + margin) / (th + margin) | 0;
+	while(_g1 < _g2) {
+		var y = _g1++;
+		var _g3 = 0;
+		var _g4 = (tileImage.width + margin) / (tw + margin) | 0;
+		while(_g3 < _g4) {
+			var x = _g3++;
+			_g.push(tileImage.sub(x * (tw + margin),y * (th + margin),tw,th));
+		}
+	}
+	return _g;
+}
+function Util_tinydungeonTiles() {
+	var tileImage = hxd_Res.get_loader().loadCache("tinydungeon.png",hxd_res_Image).toTile();
+	var tw = 16;
+	var th = 16;
+	var margin = 1;
+	var _g = [];
+	var _g1 = 0;
+	var _g2 = (tileImage.height + margin) / (th + margin) | 0;
+	while(_g1 < _g2) {
+		var y = _g1++;
+		var _g3 = 0;
+		var _g4 = (tileImage.width + margin) / (tw + margin) | 0;
+		while(_g3 < _g4) {
+			var x = _g3++;
+			_g.push(tileImage.sub(x * (tw + margin),y * (th + margin),tw,th));
+		}
+	}
+	return _g;
+}
+function Util_toSprite(tile,x,y) {
+	if(y == null) {
+		y = 0;
+	}
+	if(x == null) {
+		x = 0;
+	}
+	var sprite = new h2d_Bitmap(tile);
+	sprite.posChanged = true;
+	sprite.x = x;
+	sprite.posChanged = true;
+	sprite.y = y;
+	sprite.posChanged = true;
+	sprite.scaleX = 4;
+	sprite.posChanged = true;
+	sprite.scaleY = 4;
+	return sprite;
+}
 var format_gif_Block = $hxEnums["format.gif.Block"] = { __ename__:true,__constructs__:null
 	,BFrame: ($_=function(frame) { return {_hx_index:0,frame:frame,__enum__:"format.gif.Block",toString:$estr}; },$_._hx_name="BFrame",$_.__params__ = ["frame"],$_)
 	,BExtension: ($_=function(extension) { return {_hx_index:1,extension:extension,__enum__:"format.gif.Block",toString:$estr}; },$_._hx_name="BExtension",$_.__params__ = ["extension"],$_)
