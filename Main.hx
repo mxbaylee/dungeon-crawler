@@ -1,10 +1,12 @@
-import js.html.WindowClient;
+//import js.html.WindowClient;
 
 class Main extends hxd.App {
   override private function init():Void {
     super.init();
     var myscene = new h2d.Scene();
     this.setScene(myscene);
+
+    myscene.scaleMode = h2d.Scene.ScaleMode.Stretch(320, 240);
 
     var tileImage = hxd.Res.roguelikeDungeon_transparent.toTile();
     var tw: Int = 16;

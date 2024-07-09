@@ -12,7 +12,8 @@
 
 -p res
 
-#-lib hlsdl
-
 -js out/app.js
+
+#-lib hlsdl
+#-hl out/app.hl
 
