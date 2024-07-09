@@ -315,10 +315,6 @@ Main.prototype = $extend(hxd_App.prototype,{
 			}
 		}
 		var tiles = _g;
-		var tileMap_bottom = 153;
-		var tileMap_right = 154;
-		var tileMap_rightLeft = 155;
-		var tileMap_left = 155;
 		var sprite = new h2d_Bitmap(tiles[153]);
 		sprite.posChanged = true;
 		sprite.x = 0;
