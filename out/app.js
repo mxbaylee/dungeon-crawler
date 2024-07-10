@@ -310,28 +310,27 @@ Main.prototype = $extend(hxd_App.prototype,{
 	}
 	,update: function(dt) {
 		this.timer += dt;
-		if(hxd_Key.isDown(38) && this.timer > 0.15) {
-			var _this = this.wizard;
-			_this.posChanged = true;
-			_this.y = this.wizard.y - 16;
-			this.timer = 0.0;
-		}
-		if(hxd_Key.isDown(39) && this.timer > 0.15) {
-			var _this = this.wizard;
-			_this.posChanged = true;
-			_this.x = this.wizard.x + 16;
-			this.timer = 0.0;
-		}
-		if(hxd_Key.isDown(37) && this.timer > 0.15) {
-			var _this = this.wizard;
-			_this.posChanged = true;
-			_this.x = this.wizard.x - 16;
-			this.timer = 0.0;
-		}
-		if(hxd_Key.isDown(40) && this.timer > 0.15) {
-			var _this = this.wizard;
-			_this.posChanged = true;
-			_this.y = this.wizard.y + 16;
+		if(this.timer > 0.15) {
+			if(hxd_Key.isDown(38)) {
+				var _this = this.wizard;
+				_this.posChanged = true;
+				_this.y = this.wizard.y - 16;
+			}
+			if(hxd_Key.isDown(39)) {
+				var _this = this.wizard;
+				_this.posChanged = true;
+				_this.x = this.wizard.x + 16;
+			}
+			if(hxd_Key.isDown(37)) {
+				var _this = this.wizard;
+				_this.posChanged = true;
+				_this.x = this.wizard.x - 16;
+			}
+			if(hxd_Key.isDown(40)) {
+				var _this = this.wizard;
+				_this.posChanged = true;
+				_this.y = this.wizard.y + 16;
+			}
 			this.timer = 0.0;
 		}
 	}

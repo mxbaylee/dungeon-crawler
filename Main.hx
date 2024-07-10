@@ -27,21 +27,15 @@ class Main extends hxd.App {
 
   override private function update(dt: Float) {
     timer = timer + dt;
-
-    if (hxd.Key.isDown(hxd.Key.UP) && timer > 0.15) {
-      wizard.y = wizard.y - 16;
-      timer = 0.0;
-    }
-    if (hxd.Key.isDown(hxd.Key.RIGHT) && timer > 0.15) {
-      wizard.x = wizard.x + 16;
-      timer = 0.0;
-    }
-    if (hxd.Key.isDown(hxd.Key.LEFT) && timer > 0.15) {
-      wizard.x = wizard.x - 16;
-      timer = 0.0;
-    }
-    if (hxd.Key.isDown(hxd.Key.DOWN) && timer > 0.15) {
-      wizard.y = wizard.y + 16;
+    if (timer > 0.15) {
+      if (hxd.Key.isDown(hxd.Key.UP))
+        wizard.y = wizard.y - 16;
+      if (hxd.Key.isDown(hxd.Key.RIGHT))
+        wizard.x = wizard.x + 16;
+      if (hxd.Key.isDown(hxd.Key.LEFT))
+        wizard.x = wizard.x - 16;
+      if (hxd.Key.isDown(hxd.Key.DOWN))
+        wizard.y = wizard.y + 16;
       timer = 0.0;
     }
   }
