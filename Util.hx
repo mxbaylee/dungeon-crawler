@@ -7,6 +7,10 @@ enum abstract DirtPathRL (Int) to Int {
   var Bottom = 182;
 }
 
+enum abstract DirectionsPermissable (Int) to Int {
+  var 153 = 16;
+}
+
 // tinydungeon
 enum abstract CharacterTD (Int) to Int {
   var Wizard = 84;

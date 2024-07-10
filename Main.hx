@@ -27,7 +27,7 @@ class Main extends hxd.App {
 
   override private function update(dt: Float) {
     timer = timer + dt;
-    if (timer > 0.15) {
+    if (timer > 0.1) {
       if (hxd.Key.isDown(hxd.Key.UP))
         wizard.y = wizard.y - 16;
       if (hxd.Key.isDown(hxd.Key.RIGHT))
