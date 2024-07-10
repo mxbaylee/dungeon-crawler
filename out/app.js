@@ -283,6 +283,7 @@ hxd_App.prototype = {
 	,__class__: hxd_App
 };
 var Main = function() {
+	this.timer = 0.0;
 	hxd_App.call(this);
 };
 $hxClasses["Main"] = Main;
@@ -303,8 +304,36 @@ Main.prototype = $extend(hxd_App.prototype,{
 		myscene.addChild(Util_toSprite(rlTiles[185],0,16));
 		myscene.addChild(Util_toSprite(rlTiles[182],0,32));
 		var tdTiles = Util_tinydungeonTiles();
-		myscene.addChild(Util_toSprite(tdTiles[84]));
+		this.wizard = Util_toSprite(tdTiles[84]);
+		myscene.addChild(this.wizard);
 		myscene.addChild(Util_toSprite(tdTiles[85],16,16));
+	}
+	,update: function(dt) {
+		this.timer += dt;
+		if(hxd_Key.isDown(38) && this.timer > 0.15) {
+			var _this = this.wizard;
+			_this.posChanged = true;
+			_this.y = this.wizard.y - 16;
+			this.timer = 0.0;
+		}
+		if(hxd_Key.isDown(39) && this.timer > 0.15) {
+			var _this = this.wizard;
+			_this.posChanged = true;
+			_this.x = this.wizard.x + 16;
+			this.timer = 0.0;
+		}
+		if(hxd_Key.isDown(37) && this.timer > 0.15) {
+			var _this = this.wizard;
+			_this.posChanged = true;
+			_this.x = this.wizard.x - 16;
+			this.timer = 0.0;
+		}
+		if(hxd_Key.isDown(40) && this.timer > 0.15) {
+			var _this = this.wizard;
+			_this.posChanged = true;
+			_this.y = this.wizard.y + 16;
+			this.timer = 0.0;
+		}
 	}
 	,__class__: Main
 });
