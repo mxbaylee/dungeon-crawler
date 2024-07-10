@@ -33,9 +33,12 @@ function roguelikeTiles() {
 
   var margin: Int = 1;
 
+  var tiHeight: Int =  Std.int(tileImage.height);
+  var tiWidth: Int = Std.int(tileImage.width);
+
   return [
-    for (y in 0 ... Std.int((tileImage.height + margin) / (th + margin)))
-    for (x in 0 ... Std.int((tileImage.width + margin) / (tw + margin)))
+    for (y in 0 ... Std.int((tiHeight + margin) / (th + margin)))
+    for (x in 0 ... Std.int((tiWidth + margin) / (tw + margin)))
     tileImage.sub(x * (tw + margin), y * (th + margin), tw, th)
   ];
 }
@@ -60,8 +63,8 @@ function toSprite(tile, x = 0, y = 0) {
 
   sprite.x = x;
   sprite.y = y;
-  sprite.scaleX = 4;
-  sprite.scaleY = 4;
+  sprite.scaleX = 1;
+  sprite.scaleY = 1;
 
   return sprite;
 }

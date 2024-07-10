@@ -6,18 +6,18 @@ class Main extends hxd.App {
 
     this.setScene(myscene);
 
-    myscene.scaleMode = h2d.Scene.ScaleMode.Stretch(320, 240);
+    myscene.scaleMode = h2d.Scene.ScaleMode.Stretch(300, 200);
 
     var rlTiles = roguelikeTiles();
 
     myscene.addChild(toSprite(rlTiles[DirtPathRL.Top]));
-    myscene.addChild(toSprite(rlTiles[DirtPathRL.Middle], 0, 64));
-    myscene.addChild(toSprite(rlTiles[DirtPathRL.Bottom], 0, 128));
+    myscene.addChild(toSprite(rlTiles[DirtPathRL.Middle], 0, 16));
+    myscene.addChild(toSprite(rlTiles[DirtPathRL.Bottom], 0, 32));
 
     var tdTiles = tinydungeonTiles();
 
     myscene.addChild(toSprite(tdTiles[CharacterTD.Wizard]));
-    myscene.addChild(toSprite(tdTiles[CharacterTD.VillagerOne], 75, 150));
+    myscene.addChild(toSprite(tdTiles[CharacterTD.VillagerOne], 16, 16));
   }
 
   static function main() {
