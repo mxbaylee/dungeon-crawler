@@ -58,7 +58,7 @@ function tinydungeonTiles() {
   ];
 }
 
-function toSprite(tile, x = 0, y = 0) {
+function toSprite(tile, x = 0, y = 0): h2d.Bitmap {
   var sprite = new h2d.Bitmap(tile);
 
   sprite.x = x;
